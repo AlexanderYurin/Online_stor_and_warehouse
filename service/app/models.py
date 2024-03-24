@@ -1,27 +1,37 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
 class Product(models.Model):
 	title = models.CharField(max_length=50)
-	price = models.DecimalField(default=0.00, max_digits=7, decimal_places=2)
 
 	def __str__(self):
 		return self.title
 
 
-class Rack(models.Model):
-	title = models.CharField(max_length=50)
-	product = models.ForeignKey(to=Product, on_delete=models.CASCADE, related_name="racks")
-	main = models.BooleanField(default=False)
+class ProductPlacement(models.Model):
+	rack = models.CharField(max_length=50)
+	product = models.ForeignKey(to=Product, on_delete=models.CASCADE, related_name="product_placements")
+	main_rack = models.BooleanField(default=True)
 	quantity = models.PositiveIntegerField(default=0)
 
 	def __str__(self):
-		return self.title
+		answer = "Главный"
+		if not self.main_rack:
+			answer = "Дополнительный"
+		return f"{self.product.title} на Стеллаже {self.rack} {answer}"
+
+	def clean(self):
+		if self.main_rack and ProductPlacement.objects.filter(product=self.product, main_rack=True).exists():
+			raise ValidationError(
+				"Только один стеллаж может быть главным для каждого продукта."
+			)
+
+	class Meta:
+		unique_together = (("rack", "product", "main_rack"),)
 
 
 class Order(models.Model):
-	date_created = models.DateTimeField(auto_now_add=True)
-
 	def __str__(self):
 		return f"{self.pk}"
 
