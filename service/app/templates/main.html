@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Items</title>
+</head>
+<body>
+
+    {% for key, items in order %}
+    <h3>{{ key }}</h3>
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item.2 }} (id={{ item.0 }})<br>
+                заказ {{ item.3 }}, {{ item.1 }} шт<br>
+                {% if item.4 %}
+                    доп стеллаж: {{ item.4 }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</body>
+</html>
