@@ -1,0 +1,217 @@
+[
+{
+    "model": "app.product",
+    "pk": 1,
+    "fields": {
+        "title": "Ноутбук"
+    }
+},
+{
+    "model": "app.product",
+    "pk": 2,
+    "fields": {
+        "title": "Телефон"
+    }
+},
+{
+    "model": "app.product",
+    "pk": 3,
+    "fields": {
+        "title": "Системный блок"
+    }
+},
+{
+    "model": "app.product",
+    "pk": 4,
+    "fields": {
+        "title": "Монитор"
+    }
+},
+{
+    "model": "app.product",
+    "pk": 5,
+    "fields": {
+        "title": "Микрофон"
+    }
+},
+{
+    "model": "app.product",
+    "pk": 6,
+    "fields": {
+        "title": "Часы"
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 1,
+    "fields": {
+        "rack": "А",
+        "product": 1,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 2,
+    "fields": {
+        "rack": "А",
+        "product": 4,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 3,
+    "fields": {
+        "rack": "Б",
+        "product": 2,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 4,
+    "fields": {
+        "rack": "В",
+        "product": 2,
+        "main_rack": false,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 5,
+    "fields": {
+        "rack": "Ж",
+        "product": 2,
+        "main_rack": false,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 6,
+    "fields": {
+        "rack": "Ж",
+        "product": 3,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 7,
+    "fields": {
+        "rack": "Ж",
+        "product": 6,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 8,
+    "fields": {
+        "rack": "А",
+        "product": 6,
+        "main_rack": false,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.productplacement",
+    "pk": 9,
+    "fields": {
+        "rack": "Ж",
+        "product": 5,
+        "main_rack": true,
+        "quantity": 10
+    }
+},
+{
+    "model": "app.order",
+    "pk": 1,
+    "fields": {}
+},
+{
+    "model": "app.order",
+    "pk": 2,
+    "fields": {}
+},
+{
+    "model": "app.order",
+    "pk": 3,
+    "fields": {}
+},
+{
+    "model": "app.order",
+    "pk": 4,
+    "fields": {}
+},
+{
+    "model": "app.orderitems",
+    "pk": 1,
+    "fields": {
+        "order": 1,
+        "product": 1,
+        "quantity": 2
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 2,
+    "fields": {
+        "order": 1,
+        "product": 2,
+        "quantity": 1
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 3,
+    "fields": {
+        "order": 1,
+        "product": 5,
+        "quantity": 1
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 4,
+    "fields": {
+        "order": 2,
+        "product": 4,
+        "quantity": 3
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 5,
+    "fields": {
+        "order": 3,
+        "product": 1,
+        "quantity": 3
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 6,
+    "fields": {
+        "order": 3,
+        "product": 3,
+        "quantity": 4
+    }
+},
+{
+    "model": "app.orderitems",
+    "pk": 7,
+    "fields": {
+        "order": 4,
+        "product": 6,
+        "quantity": 1
+    }
+}
+]
