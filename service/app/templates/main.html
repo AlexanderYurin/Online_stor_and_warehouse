@@ -6,7 +6,9 @@
     <title>Order Items</title>
 </head>
 <body>
-
+	{% if no_order %}
+		<h3>{{ no_order }}</h3>
+	{% else %}
     {% for key, items in order %}
     <h3>Стеллаж {{ key }}</h3>
     <ul>
@@ -21,5 +23,6 @@
         {% endfor %}
     </ul>
 {% endfor %}
+{% endif %}
 </body>
 </html>
